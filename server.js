@@ -6,16 +6,19 @@ var mongoose = require('mongoose');
 var app = express();
 
 mongoose.connect(config.database, function (err) {
-    if(err){
+    if (err) {
         console.log(err);
-    }else{
+    } else {
         console.log('Connected to the database');
     }
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+
+var api = require('./app/routes/api')(app, express);
+app.use('/api', api);
 
 /**
  * Рендеремо сторінку
@@ -29,9 +32,9 @@ app.get('/contact', function (req, res) {
 
 // Лісенер, який показує результат запуску сервера
 app.listen(config.port, function (err) {
-    if(err){
+    if (err) {
         console.log(err);
-    }else{
+    } else {
         console.log("Listening on port " + config.port);
     }
 });
