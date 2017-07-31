@@ -4,7 +4,7 @@ var secretKey = config.secretKey;
 
 module.exports = function (app, express) {
     var api = express.Router();
-    api.post('/signup', function (req, res) {
+    api.get('/signup', function (req, res) {
         var user = new User({
             name: req.body.name,
             username: req.body.username,
