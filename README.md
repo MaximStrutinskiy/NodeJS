@@ -1,13 +1,13 @@
 #Learn NodeJs
 
-#####MongoDB commands:
+##MongoDB commands:
 ````
 insert: db.users.insert({name: 'O. Strut', email:'asd123ad@mail.com', username:'Oax', pass: '998908'});
 update: db.users.update({name: 'O. Strut'}, {$set: {email:'ad@mail.com'}});
 find:   db.users.find().pretty()
 ````
 
-#####Tasks:
+##Tasks:
 ````
 1) Create base authorization
  - login to acc
@@ -16,9 +16,9 @@ find:   db.users.find().pretty()
  - personal cabinet
 
 2) Add roles for users (admin, moderator, simple user, annonim)
-```
+````
 
-#### Lib
+## Lib:
 ````
 NodeJS, Angular, MongDB
 https://scotch.io/tutorials/easy-node-authentication-setup-and-local
