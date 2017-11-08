@@ -8,10 +8,12 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 /* GET users listing. */
+// Home
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
 });
 
+// Register
 router.get('/register', function (req, res, next) {
     res.render('register', {title: 'Register'});
 });
@@ -67,8 +69,9 @@ router.post('/register', upload.single('profileimage'), function (req, res, next
     }
 });
 
+// Login
 router.get('/login', function (req, res, next) {
-    res.render('login', {title: 'login'});
+    res.render('login', {title: 'Login'});
 });
 
 passport.serializeUser(function(user, done) {
@@ -107,5 +110,11 @@ router.post('/login', passport.authenticate('local', {
     res.redirect('/');
 });
 
+// Logout
+router.get('/logout', function (req, res){
+    req.logout();
+    req.flash('success', 'You are now logged out');
+    res.redirect('/users/login');
+});
 
 module.exports = router;
