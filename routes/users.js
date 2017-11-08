@@ -43,7 +43,7 @@ router.post('/register', upload.single('profileimage'), function (req, res, next
 
     if (errors) {
         res.render('register', {
-           errors: errors
+            errors: errors
         });
     } else {
         var newUser = new User({
@@ -54,13 +54,12 @@ router.post('/register', upload.single('profileimage'), function (req, res, next
             profileimage: profileimage
         });
 
-        User.createUser(newUser, function(err, user){
-            if(err) throw err;
+        User.createUser(newUser, function (err, user) {
+            if (err) throw err;
             console.log(user);
         });
 
         req.flash('success', 'You are now registered and can login');
-
         res.location('/');
         res.redirect('/');
     }
