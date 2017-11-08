@@ -89,7 +89,7 @@ passport.use(new LocalStrategy(function (username, password, done) {
         }
 
         User.comparePassword(password, user.password, function (err, isMatch) {
-            if (err) return dote(err);
+            if (err) return done(err);
             if (isMatch) {
                 return done(null, user);
             } else {
@@ -103,7 +103,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/users/login',
     failureFlash: 'Invalid username or password'
 }), function (req, res) {
-    res.flash('success', 'You are now logged in');
+    req.flash('success', 'You are now logged in');
     res.redirect('/');
 });
 
