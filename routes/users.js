@@ -65,7 +65,7 @@ router.post('/register', upload.single('profileimage'), function (req, res, next
 
         req.flash('success', 'You are now registered and can login');
         res.location('/');
-        res.redirect('/');
+        res.redirect('/users/profile');
     }
 });
 
@@ -74,12 +74,12 @@ router.get('/login', function (req, res, next) {
     res.render('login', {title: 'Login'});
 });
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
-    User.getUserById(id, function(err, user) {
+passport.deserializeUser(function (id, done) {
+    User.getUserById(id, function (err, user) {
         done(err, user);
     });
 });
@@ -111,14 +111,14 @@ router.post('/login', passport.authenticate('local', {
 });
 
 // Logout
-router.get('/logout', function (req, res){
+router.get('/logout', function (req, res) {
     req.logout();
     req.flash('success', 'You are now logged out');
     res.redirect('/users/login');
 });
 
 // Profile
-router.get('/profile', function (req, res){
+router.get('/profile', function (req, res) {
     res.render('profile', {title: 'Profile', user: 'Best user'});
 });
 
