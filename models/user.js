@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-mongoose.connect('mongodb://localhost/nodeauth', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/calipso', {useMongoClient: true});
 
 var db = mongoose.connection;
 
