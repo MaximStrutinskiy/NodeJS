@@ -15,13 +15,15 @@ body
                 ul.navbar-nav.mr-auto
                     li.nav-item(class=(title == 'Members' ? 'active' : ''))
                         a.nav-link( href="/" ) Members
-                    li.nav-item(class=(title == 'Register' ? 'active' : ''))
-                        a.nav-link( href="/users/register" ) Register
-                    li.nav-item(class=(title == 'Login' ? 'active' : ''))
-                        a.nav-link( href="/users/login" ) Login
+                    if !user
+                        li.nav-item(class=(title == 'Register' ? 'active' : ''))
+                            a.nav-link( href="/users/register" ) Register
+                        li.nav-item(class=(title == 'Login' ? 'active' : ''))
+                            a.nav-link( href="/users/login" ) Login
                 ul.nav.navbar-nav.navbar-right
-                    li
-                        a.nav-link( href="/users/logout" ) Logout
+                    if user
+                        li
+                            a.nav-link( href="/users/logout" ) Logout
     .container
         != messages()
         block content
