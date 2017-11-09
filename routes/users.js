@@ -8,10 +8,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 /* GET users listing. */
-// Home
-router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
-});
 
 // Register
 router.get('/register', function (req, res, next) {
