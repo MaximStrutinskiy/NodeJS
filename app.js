@@ -16,7 +16,6 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -75,7 +74,7 @@ app.use(function (req, res, next) {
 });
 
 // For eny page
-app.get('*', function(req, res, next){
+app.get('*', function (req, res, next) {
     res.locals.user = req.user || null;
     next();
 });

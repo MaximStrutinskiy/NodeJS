@@ -10,7 +10,7 @@ find:   db.users.find().pretty()
 ##Tasks:
 ````
 1) Create base authorization
- - login to acc
+ - login to acc (Ошибка с паролями, если введен 1 пароль правельно а второй нет - проходит авторизация, добавить проверки на сравнение)
  - register acc
  - update acc
  - personal cabinet
