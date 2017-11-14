@@ -27,6 +27,9 @@ var UserShema = mongoose.Schema({
 
 var User = module.exports = mongoose.model('User', UserShema);
 
+/**
+ * Add custom methods for model
+ */
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback)
 };
