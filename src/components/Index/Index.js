@@ -15,6 +15,7 @@ class Index extends Component {
         <p className="Index-intro">
           To get started, edit <code>src/Index.js</code> and save to reload.
         </p>
+        <a href="/user">User page</a>
       </div>
     );
   }
