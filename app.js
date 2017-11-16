@@ -15,16 +15,14 @@ var bcrypt = require('bcryptjs');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
-
 var index = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+// app.set('view engine', 'html');
 // handle file uploads
 // app.use(multer({dest:'./uploads'}));
 
@@ -79,6 +77,7 @@ app.get('*', function (req, res, next) {
     next();
 });
 
+// Routs
 app.use('/', index);
 app.use('/users', users);
 

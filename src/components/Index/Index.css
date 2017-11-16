@@ -1,0 +1,22 @@
+.Index {
+  text-align: center;
+}
+
+.Index-logo {
+  height: 80px;
+}
+
+.Index-header {
+  background-color: #f8f8f8;
+  height: 150px;
+  padding: 20px;
+  color: #3d464d;
+}
+
+.Index-intro {
+  font-size: large;
+}
+
+code {
+  color: #e73a37;
+}
