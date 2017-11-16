@@ -22,7 +22,7 @@ var app = express();
 // view engine setup
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.set('views', __dirname + '/public');
+app.set('views', path.join(__dirname, 'build'));
 
 // handle file uploads
 // app.use(multer({dest:'./uploads'}));
