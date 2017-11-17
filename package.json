@@ -13,6 +13,7 @@
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "express-messages": "*",
+    "express-session": "^1.15.6",
     "express-validator": "*",
     "jade": "~1.11.0",
     "mongodb": "*",

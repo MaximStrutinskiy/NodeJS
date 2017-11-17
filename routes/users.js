@@ -107,7 +107,7 @@ router.post('/login', passport.authenticate('local', {
     failureFlash: 'Invalid username or password'
 }), function (req, res) {
     req.flash('success', 'You are now logged in');
-    res.redirect('/');
+    res.redirect('/users/profile');
 });
 
 // Logout
@@ -115,6 +115,11 @@ router.get('/logout', function (req, res){
     req.logout();
     req.flash('success', 'You are now logged out');
     res.redirect('/users/login');
+});
+
+// Profile
+router.get('/profile', function (req, res){
+  res.render('profile', {title: 'Profile'});
 });
 
 module.exports = router;
