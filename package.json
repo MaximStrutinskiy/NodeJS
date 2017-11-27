@@ -20,6 +20,7 @@
     "mongoose": "*",
     "morgan": "~1.9.0",
     "multer": "*",
+    "node-mongodb-fixtures": "^1.5.3",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*",
