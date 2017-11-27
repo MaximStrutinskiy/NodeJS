@@ -120,4 +120,9 @@ router.get('/profile', function (req, res) {
   res.render('profile', { title: 'Profile', user: 'Best user' });
 });
 
+// Profile
+router.get('/profile', function (req, res) {
+  res.render('profile', { title: 'Profile' });
+});
+
 module.exports = router;
